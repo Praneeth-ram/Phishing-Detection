@@ -1,0 +1,6 @@
+fastapi
+streamlit
+xgboost
+scikit-learn
+pandas
+uvicorn
