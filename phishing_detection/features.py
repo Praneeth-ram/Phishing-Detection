@@ -31,4 +31,14 @@ def extract_features(url):
     # Prefix/Suffix in Domain
     features["Prefix/Suffix"] = 1 if "-" in urlparse(url).netloc else 0
 
+    # Feature 9-16: (Other features based on dataset)
+    features["DNS_Record"] = 1  # Placeholder (You may need external DNS verification)
+    features["Web_Traffic"] = 1  # Placeholder
+    features["Domain_Age"] = 1   # Placeholder
+    features["Domain_End"] = 1   # Placeholder
+    features["iFrame"] = 1       # Placeholder
+    features["Mouse_Over"] = 1   # Placeholder
+    features["Right_Click"] = 1  # Placeholder
+    features["Web_Forwards"] = 1 # Placeholder
+
     return pd.DataFrame([features])  # Convert dictionary to DataFrame

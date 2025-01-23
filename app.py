@@ -6,8 +6,17 @@ url = st.text_input("Enter URL:")
 
 if st.button("Check"):
     response = requests.post("http://127.0.0.1:8000/predict/", json={"url": url})
-    result = response.json()
-    if result["phishing"]:
-        st.error("🚨 Phishing URL")
-    else:
-        st.success("✅ Legitimate URL")
+    
+    try:
+        result = response.json()
+        st.write("Response:", result)  # Debugging output
+
+        if isinstance(result, dict) and "phishing" in result:
+            if result["phishing"]:
+                st.error("🚨 Phishing URL")
+            else:
+                st.success("✅ Legitimate URL")
+        else:
+            st.error("Unexpected response format")
+    except Exception as e:
+        st.error(f"Error processing response: {e}")

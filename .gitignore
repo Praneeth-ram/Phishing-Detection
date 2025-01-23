@@ -1,4 +1,6 @@
 env/
+__pycache__/
+phishing_detection/__pycache__
 *.pyo
 
 # Ignore package build and distribution files
