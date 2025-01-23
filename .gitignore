@@ -1,0 +1,15 @@
+env/
+*.pyo
+
+# Ignore package build and distribution files
+dist/
+build/
+*.egg-info/
+
+
+
+# Ignore IDE/editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
